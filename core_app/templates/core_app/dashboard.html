@@ -1,0 +1,49 @@
+<html>
+
+<title>Quiz App</title>
+
+<head>
+    <style>
+        .quiz_start {
+            text-decoration: none;
+        }
+
+        td {
+            height: 25px;
+            width: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="display: inline;">
+        <h2>Hi <strong>{{ user }} </strong>,</h2>
+        <p style="float: right;"><a href="">Logout</a></p>
+    </div>
+
+
+    <div>
+        <table style="width: 80%;">
+            <tr>
+                <th>No</th>
+                <th>Guiz</th>
+                <th>Score</th>
+                <th>Action</th>
+            </tr>
+
+            {% for quiz in quiz_list %}
+            <tr>
+                <td>{{ quiz.id }}</td>
+                <td>{{ quiz.name }}</td>
+                <td>0</td>
+                <td><a href="quiz/{{ quiz.id }}" class="quiz_start">start</a></a></td>
+            </tr>
+            {% endfor%}
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
